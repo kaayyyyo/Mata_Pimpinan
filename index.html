@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Mata Pimpinan — DPMPTSP Kota Samarinda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body class="portal-body">
+  <header class="portal-header">
+    <div class="container portal-header-inner">
+      <a class="portal-brand" href="index.html" aria-label="Portal Mata Pimpinan">
+        <img src="assets/Logo.jpg" alt="Lambang DPMPTSP Kota Samarinda" class="portal-logo">
+        <span class="portal-title-group">
+          <strong>Portal Mata Pimpinan</strong>
+          <small>DPMPTSP Kota Samarinda</small>
+        </span>
+      </a>
+
+      <nav class="portal-nav" aria-label="Navigasi utama">
+        <a href="#ringkasan" class="active">Ringkasan</a>
+        <a href="#modul">Modul</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+
+      <div class="portal-actions">
+        <div class="clock-container" aria-label="Waktu WITA">
+          <i data-lucide="clock-3"></i>
+          <span><strong id="clockTime">--:--:-- WITA</strong><small id="clockDate">Memuat waktu...</small></span>
+        </div>
+        <button class="icon-button" type="button" aria-label="Notifikasi"><i data-lucide="bell"></i><span class="notification-dot"></span></button>
+        <a href="login.html" class="profile-link"><span class="profile-avatar">AD</span><span>Portal Admin</span><i data-lucide="chevron-down"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="portal-hero container" id="ringkasan">
+      <div class="hero-copy portal-reveal">
+        <p class="eyebrow"><span></span> Sistem informasi eksekutif</p>
+        <h1 id="portalGreeting">Mata Pimpinan DPMPTSP</h1>
+        <p>Ringkasan data strategis DPMPTSP Kota Samarinda dalam satu ruang kerja yang ringkas dan terintegrasi.</p>
+        <div class="hero-buttons">
+          <a href="dashboard.html" class="btn btn-primary">Buka Dashboard <i data-lucide="arrow-up-right"></i></a>
+          <a href="#modul" class="btn hero-secondary">Lihat semua modul <i data-lucide="arrow-down"></i></a>
+        </div>
+      </div>
+
+      <aside class="portal-overview portal-reveal" aria-label="Status portal">
+        <div class="overview-heading"><span>Ringkasan Portal</span><i data-lucide="more-horizontal"></i></div>
+        <div class="overview-visual" aria-hidden="true">
+          <svg viewBox="0 0 430 154" preserveAspectRatio="none"><path class="chart-fill" d="M0,132 C32,118 47,126 75,104 C106,80 121,106 152,82 C182,59 206,78 233,55 C264,30 286,58 319,33 C343,15 371,42 430,7 L430,154 L0,154Z"/><path class="chart-line" d="M0,132 C32,118 47,126 75,104 C106,80 121,106 152,82 C182,59 206,78 233,55 C264,30 286,58 319,33 C343,15 371,42 430,7"/></svg>
+          <span class="chart-point point-a"></span><span class="chart-point point-b"></span><span class="chart-point point-c"></span>
+        </div>
+        <div class="overview-footer"><span><i data-lucide="radio"></i> Terhubung ke layanan data</span><a href="dashboard.html">Tinjau <i data-lucide="arrow-right"></i></a></div>
+      </aside>
+    </section>
+
+    <section class="container metrics-section" aria-label="Ringkasan statistik">
+      <div class="section-heading"><div><p class="section-kicker">Ikhtisar</p><h2>Indikator utama</h2></div><span class="live-label"><i data-lucide="refresh-cw"></i> Pembaruan langsung</span></div>
+      <div class="portal-metrics-bar">
+        <article class="portal-metric-item"><div class="portal-metric-icon"><i data-lucide="landmark"></i></div><div class="portal-metric-data"><span class="portal-metric-lbl">Retribusi PBG YTD</span><strong class="portal-metric-val" id="qsPBG">-</strong></div><i data-lucide="arrow-up-right" class="metric-arrow"></i></article>
+        <article class="portal-metric-item"><div class="portal-metric-icon"><i data-lucide="line-chart"></i></div><div class="portal-metric-data"><span class="portal-metric-lbl">Realisasi Investasi</span><strong class="portal-metric-val" id="qsInvestasi">-</strong></div><i data-lucide="arrow-up-right" class="metric-arrow"></i></article>
+        <article class="portal-metric-item"><div class="portal-metric-icon"><i data-lucide="star"></i></div><div class="portal-metric-data"><span class="portal-metric-lbl">Indeks Kepuasan</span><strong class="portal-metric-val" id="qsSKM">-</strong></div><i data-lucide="arrow-up-right" class="metric-arrow"></i></article>
+        <article class="portal-metric-item"><div class="portal-metric-icon"><i data-lucide="users-round"></i></div><div class="portal-metric-data"><span class="portal-metric-lbl">Personil Dinas</span><strong class="portal-metric-val" id="qsPegawai">-</strong></div><i data-lucide="arrow-up-right" class="metric-arrow"></i></article>
+      </div>
+    </section>
+
+    <section class="container workspace-grid">
+      <article class="info-panel activity-panel">
+        <div class="panel-heading"><div><p class="section-kicker">Monitoring</p><h2>Aktivitas terbaru</h2></div><i data-lucide="activity"></i></div>
+        <div class="empty-activity"><div><i data-lucide="inbox"></i></div><strong>Menunggu pembaruan data</strong><p>Aktivitas akan tampil setelah data pada modul diperbarui.</p></div>
+      </article>
+      <aside class="info-panel announcement-panel">
+        <div class="panel-heading"><div><p class="section-kicker">Informasi</p><h2>Pengumuman</h2></div><i data-lucide="megaphone"></i></div>
+        <div class="announcement-content"><span class="announcement-icon"><i data-lucide="info"></i></span><div><strong>Pusat informasi pimpinan</strong><p>Gunakan setiap modul untuk melihat data terbaru dan laporan operasional.</p><a href="dashboard.html">Buka dashboard <i data-lucide="arrow-right"></i></a></div></div>
+      </aside>
+    </section>
+
+    <section class="container module-section" id="modul">
+      <div class="section-heading"><div><p class="section-kicker">Ruang kerja</p><h2>Modul pemantauan</h2></div><p class="section-caption">Pilih modul untuk meninjau data dan laporan terperinci.</p></div>
+      <div class="cards-grid">
+        <a class="premium-card" href="dashboard.html?module=dispensasi"><span class="premium-card-icon"><i data-lucide="calendar-clock"></i></span><div><h3>Dispensasi Pegawai</h3><p>Pemantauan izin, cuti, dan kebutuhan dispensasi aparatur.</p></div><span class="card-link">Buka modul <i data-lucide="arrow-up-right"></i></span></a>
+        <a class="premium-card" href="dashboard.html?module=pbg"><span class="premium-card-icon"><i data-lucide="building-2"></i></span><div><h3>Retribusi PBG</h3><p>Realisasi penerimaan retribusi Persetujuan Bangunan Gedung.</p></div><span class="card-link">Buka modul <i data-lucide="arrow-up-right"></i></span></a>
+        <a class="premium-card" href="dashboard.html?module=pegawai"><span class="premium-card-icon"><i data-lucide="contact-round"></i></span><div><h3>Data Pegawai</h3><p>Direktori aparatur berdasarkan bidang dan status kepegawaian.</p></div><span class="card-link">Buka modul <i data-lucide="arrow-up-right"></i></span></a>
+        <a class="premium-card" href="dashboard.html?module=rapat"><span class="premium-card-icon"><i data-lucide="clipboard-list"></i></span><div><h3>Hasil Rapat</h3><p>Notulen, keputusan, dan tindak lanjut rapat pimpinan.</p></div><span class="card-link">Buka modul <i data-lucide="arrow-up-right"></i></span></a>
+        <a class="premium-card" href="dashboard.html?module=skm"><span class="premium-card-icon"><i data-lucide="messages-square"></i></span><div><h3>Monitoring SKM</h3><p>Indeks dan respons Survei Kepuasan Masyarakat.</p></div><span class="card-link">Buka modul <i data-lucide="arrow-up-right"></i></span></a>
+        <a class="premium-card" href="dashboard.html?module=investasi"><span class="premium-card-icon"><i data-lucide="chart-no-axes-combined"></i></span><div><h3>Realisasi Investasi</h3><p>Perkembangan PMDN dan PMA menurut periode pelaporan.</p></div><span class="card-link">Buka modul <i data-lucide="arrow-up-right"></i></span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="portal-footer"><div class="container"><span><strong>Portal Mata Pimpinan</strong> <span>© 2026 DPMPTSP Kota Samarinda</span></span><span>Sistem Informasi Eksekutif</span></div></footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/portal.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

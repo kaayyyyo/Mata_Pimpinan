@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Eksekutif - PORTAL MATA PIMPINAN</title>
+  
+  <!-- Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <!-- Collapsible Sidebar Navigation -->
+    <aside class="dashboard-sidebar" id="sidebarNode">
+      <div class="sidebar-header">
+        <img src="assets/Logo.jpg" alt="DPMPTSP Kota Samarinda Emblem" class="sidebar-logo">
+        <div class="sidebar-title-block">
+          <span class="title">MATA PIMPINAN</span>
+          <span class="sub">DPMPTSP Kota Samarinda</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <div class="menu-label">Menu Eksekutif</div>
+
+        <a href="dashboard.html?module=dispensasi" class="menu-item" data-module="dispensasi">
+          <div class="menu-item-left">
+            <i class="fas fa-user-clock"></i>
+            <span>Dispensasi Pegawai</span>
+          </div>
+          <i class="fas fa-chevron-right" style="font-size: 0.65rem; opacity: 0.5;"></i>
+        </a>
+
+        <a href="dashboard.html?module=pbg" class="menu-item" data-module="pbg">
+          <div class="menu-item-left">
+            <i class="fas fa-building-columns"></i>
+            <span>Retribusi PBG</span>
+          </div>
+          <i class="fas fa-chevron-right" style="font-size: 0.65rem; opacity: 0.5;"></i>
+        </a>
+
+        <a href="dashboard.html?module=pegawai" class="menu-item" data-module="pegawai">
+          <div class="menu-item-left">
+            <i class="fas fa-users-viewfinder"></i>
+            <span>Data Pegawai</span>
+          </div>
+          <i class="fas fa-chevron-right" style="font-size: 0.65rem; opacity: 0.5;"></i>
+        </a>
+
+        <a href="dashboard.html?module=rapat" class="menu-item" data-module="rapat">
+          <div class="menu-item-left">
+            <i class="fas fa-file-signature"></i>
+            <span>Hasil Rapat Pimpinan</span>
+          </div>
+          <i class="fas fa-chevron-right" style="font-size: 0.65rem; opacity: 0.5;"></i>
+        </a>
+
+        <a href="dashboard.html?module=skm" class="menu-item" data-module="skm">
+          <div class="menu-item-left">
+            <i class="fas fa-star-half-alt"></i>
+            <span>Monitoring SKM / IKM</span>
+          </div>
+          <i class="fas fa-chevron-right" style="font-size: 0.65rem; opacity: 0.5;"></i>
+        </a>
+
+        <a href="dashboard.html?module=investasi" class="menu-item" data-module="investasi">
+          <div class="menu-item-left">
+            <i class="fas fa-chart-pie"></i>
+            <span>Realisasi Investasi</span>
+          </div>
+          <i class="fas fa-chevron-right" style="font-size: 0.65rem; opacity: 0.5;"></i>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="index.html" class="btn btn-outline btn-back">
+          <i class="fas fa-arrow-left"></i> Kembali ke Portal
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Container -->
+    <div class="dashboard-main">
+      
+      <!-- Topbar with filters -->
+      <header class="dashboard-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-left">
+            <button class="sidebar-toggle-btn" id="toggleSidebar" title="Buka Sidebar">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="page-breadcrumbs">
+              <h2 class="breadcrumb-title" id="pageTitle">Dashboard Eksekutif</h2>
+              <p class="breadcrumb-sub" id="pageSub">Portofolio Pemantauan Kinerja Pimpinan</p>
+            </div>
+          </div>
+
+          <div class="topbar-right">
+            <!-- Global filters -->
+            <div class="dashboard-filter-bar no-print">
+              <i class="far fa-calendar-alt filter-icon-badge"></i>
+              <span class="filter-label">Periode:</span>
+              <select id="filterYear" class="filter-dropdown">
+                <option value="2026">2026</option>
+                <option value="2025" selected>2025</option>
+              </select>
+              <span style="color: var(--border-color); margin: 0 0.25rem;">|</span>
+              <select id="filterMonth" class="filter-dropdown">
+                <option value="Semua" selected>Semua Bulan</option>
+                <option value="01">Januari</option>
+                <option value="02">Februari</option>
+                <option value="03">Maret</option>
+                <option value="04">April</option>
+                <option value="05">Mei</option>
+                <option value="06">Juni</option>
+                <option value="07">Juli</option>
+                <option value="08">Agustus</option>
+                <option value="09">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+                <option value="12">Desember</option>
+              </select>
+            </div>
+
+            <!-- Action buttons -->
+            <button class="btn btn-outline btn-sm no-print" onclick="Utils.printPage()">
+              <i class="fas fa-print"></i> Cetak Laporan
+            </button>
+            
+            <a href="admin.html" class="btn btn-primary btn-sm no-print">
+              <i class="fas fa-user-shield"></i> Kelola Data
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard content injected here -->
+      <main class="dashboard-content" id="dashboardContent">
+        <!-- Renders dynamically -->
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Shared JavaScript Foundations -->
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/charts.js"></script>
+
+  <!-- Module Loaders -->
+  <script src="js/modules/dispensasi.js"></script>
+  <script src="js/modules/pbg.js"></script>
+  <script src="js/modules/pegawai.js"></script>
+  <script src="js/modules/rapat.js"></script>
+  <script src="js/modules/skm.js"></script>
+  <script src="js/modules/investasi.js"></script>
+
+  <!-- Main Dashboard Controller -->
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Administrator - PORTAL MATA PIMPINAN</title>
+  
+  <!-- Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <style>
+    body {
+      background: radial-gradient(circle at 50% 120%, #0F4C81 0%, #FAFBFD 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .login-container {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 20px 40px -10px rgba(15, 76, 129, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2.25rem;
+      transition: var(--transition-normal);
+    }
+    .login-logo-wrapper {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .login-logo {
+      width: 60px;
+      height: 60px;
+      filter: drop-shadow(0 8px 16px rgba(15, 76, 129, 0.15));
+      margin-bottom: 0.75rem;
+    }
+    .login-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+    .login-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .info-demo-box {
+      margin-top: 1.5rem;
+      background: rgba(15, 76, 129, 0.05);
+      border: 1px solid rgba(15, 76, 129, 0.1);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-logo-wrapper">
+      <img src="assets/Logo.jpg" alt="DPMPTSP Samarinda Logo" class="login-logo">
+      <h2 class="login-title">PANEL ADMINISTRATOR</h2>
+      <p class="login-sub">Portal Mata Pimpinan DPMPTSP Kota Samarinda</p>
+    </div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label class="form-label" for="username">Username Admin</label>
+        <div class="search-wrapper">
+          <i class="fas fa-user-shield"></i>
+          <input type="text" id="username" class="form-control" placeholder="Masukkan username..." required value="admin">
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 1.75rem;">
+        <label class="form-label" for="password">Kata Sandi</label>
+        <div class="search-wrapper">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" class="form-control" placeholder="Masukkan password..." required value="pimpinan123">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-full" style="height: 42px; font-size: 0.9rem;">
+        <i class="fas fa-sign-in-alt"></i> Masuk Dashboard Admin
+      </button>
+    </form>
+
+    <div class="info-demo-box">
+      <strong><i class="fas fa-info-circle"></i> Info Pengujian (Demo):</strong><br>
+      • Username: <code>admin</code> | Password: <code>pimpinan123</code><br>
+      • Akun terintegrasi ke Google Apps Script REST API
+    </div>
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+      <a href="index.html" style="font-size: 0.8rem; color: var(--text-light); transition: var(--transition-fast); text-decoration: none;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-light)'">
+        <i class="fas fa-arrow-left"></i> Kembali ke Portal Utama
+      </a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

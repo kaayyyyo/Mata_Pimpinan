@@ -1,0 +1,183 @@
+/* ==========================================================================
+   PORTAL MATA PIMPINAN - Modern Fluent & Windows 11 Inspired Design System
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Microsoft Fluent / Windows 11 / Power BI Palette */
+  --primary: #0F4C81;          /* Corporate Deep Navy */
+  --primary-hover: #082F52;
+  --primary-light: rgba(15, 76, 129, 0.08);
+  
+  --secondary: #2563EB;        /* Azure Blue */
+  --secondary-hover: #1D4ED8;
+  --secondary-light: rgba(37, 99, 235, 0.08);
+
+  --accent-teal: #0D9488;      /* Modern Teal */
+  --accent-purple: #7C3AED;    /* Power BI Purple */
+
+  /* Neutral Dark / Light Colors */
+  --bg-main: #FAFBFD;          /* Clean Light Workspace background */
+  --bg-card: rgba(255, 255, 255, 0.7); /* Acrylic material glass */
+  --bg-solid-card: #FFFFFF;
+  --border-color: rgba(229, 231, 235, 0.8);
+  --border-focus: #2563EB;
+  
+  --text-main: #0F172A;        /* Slate 900 */
+  --text-muted: #475569;       /* Slate 600 */
+  --text-light: #94A3B8;       /* Slate 400 */
+
+  /* Status Colors */
+  --success: #10B981;          /* Emerald 500 */
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --warning: #F59E0B;          /* Amber 500 */
+  --warning-bg: rgba(245, 158, 11, 0.1);
+  --danger: #EF4444;           /* Rose 500 */
+  --danger-bg: rgba(239, 68, 68, 0.1);
+  --info: #06B6D4;             /* Cyan 500 */
+  --info-bg: rgba(6, 180, 212, 0.1);
+
+  /* Geometry & Borders */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows (Fluent Shadow System) */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 8px 16px -4px rgba(15, 76, 129, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 20px 24px -4px rgba(15, 76, 129, 0.06), 0 8px 8px -4px rgba(0, 0, 0, 0.03);
+  --shadow-fluent: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+  --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.15);
+
+  /* Animations */
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.40s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout Constants */
+  --sidebar-width: 280px;
+  --header-height: 72px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Base Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
+
+/* Container */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+/* Fluent Acrylic Background Effect */
+.acrylic-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-fluent);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-normal);
+}
+
+/* Toast Container & Toasts */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+.toast {
+  pointer-events: auto;
+  min-width: 320px;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--transition-fast);
+}
+.toast-icon {
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+.toast-success { border-left: 4px solid var(--success); }
+.toast-success .toast-icon { color: var(--success); }
+.toast-warning { border-left: 4px solid var(--warning); }
+.toast-warning .toast-icon { color: var(--warning); }
+.toast-danger { border-left: 4px solid var(--danger); }
+.toast-danger .toast-icon { color: var(--danger); }
+.toast-info { border-left: 4px solid var(--secondary); }
+.toast-info .toast-icon { color: var(--secondary); }
+
+.toast-content {
+  flex: 1;
+}
+.toast-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.toast-msg {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
